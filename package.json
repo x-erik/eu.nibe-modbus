@@ -1,0 +1,13 @@
+{
+  "name": "eu.nibe-modbus",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "jsmodbus": "^4.0.6",
+    "npm": "^10.9.1",
+    "sharp": "^0.33.5"
+  }
+}

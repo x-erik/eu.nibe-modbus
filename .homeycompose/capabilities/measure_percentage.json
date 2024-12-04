@@ -1,0 +1,11 @@
+{
+    "type": "number",
+    "title": { "en": "Measure Percentage" },
+    "uiComponent": "sensor",
+    "getable": true,
+    "setable": false,
+    "units": { "en": "%"},
+    "insights": true,
+    "chartType": "spline",
+    "icon": "/assets/pump.svg"
+  }

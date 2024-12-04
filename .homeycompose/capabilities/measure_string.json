@@ -1,0 +1,10 @@
+{
+    "type": "string",
+    "title": { "en": "Measure String" },
+    "uiComponent": "sensor",
+    "getable": true,
+    "setable": false,
+    "units": { "en": ""},
+    "insights": true,
+    "chartType": "spline"
+  }

@@ -1,0 +1,28 @@
+{
+  "name": {
+    "en": "RMU S40"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity"
+  ],
+  "images": {
+    "small": "/drivers/rmu-s40/assets/images/small.png",
+    "large": "/drivers/rmu-s40/assets/images/large.png",
+    "xlarge": "/drivers/rmu-s40/assets/images/xlarge.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}

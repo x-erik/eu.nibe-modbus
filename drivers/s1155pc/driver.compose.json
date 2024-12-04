@@ -1,0 +1,131 @@
+{
+  "name": {
+    "en": "S1155-6PC"
+  },
+  "class": "other",
+  "capabilities": [
+    "measure_temperature.outside",
+    "measure_temperature.outside_avg",
+    "measure_temperature.hot_water_top",
+    "measure_temperature.hot_water_load",
+    "measure_temperature.heating_supply",
+    "measure_temperature.heating_return",
+    "measure_temperature.degree_minutes",
+    "measure_temperature.calculated_supply",
+    "measure_temperature.source_in",
+    "measure_temperature.source_out",
+    "measure_percentage.heating_pump",
+    "measure_percentage.source_pump",
+    "measure_frequency.compressor",
+    "measure_string.priority",
+    "measure_power"
+  ],
+  "capabilitiesOptions": {
+    "current_limit": {
+      "max": 32
+    },
+    "measure_temperature.outside": {
+      "title": {
+        "en": "Outside temperature",
+        "nl": "Buitentemperatuur"
+      }
+    },
+    "measure_temperature.outside_avg": {
+      "title": {
+        "en": "Average outside temperature",
+        "nl": "Gemiddelde buitentemperatuur"
+      }
+    },
+    "measure_temperature.source_in": {
+      "title": {
+        "en": "Groundsource medium - in",
+        "nl": "Bron in"
+      }
+    },
+    "measure_temperature.source_out": {
+      "title": {
+        "en": "Groundsource medium - out",
+        "nl": "Bron uit"
+      }
+    },
+    "measure_temperature.heating_supply": {
+      "title": {
+        "en": "Heating supply",
+        "nl": "CV aanvoer"
+      }
+    },
+    "measure_temperature.heating_return": {
+      "title": {
+        "en": "Heating return",
+        "nl": "CV retour"
+      }
+    },
+    "measure_temperature.degree_minutes": {
+      "title": {
+        "en": "Degree minutes",
+        "nl": "Graadminuten"
+      }
+    },
+    "measure_temperature.hot_water_load": {
+      "title": {
+        "en": "Hot water load",
+        "nl": "Heet water productie"
+      }
+    },
+    "measure_temperature.hot_water_top": {
+      "title": {
+        "en": "Hot water top",
+        "nl": "Heet water top"
+      }
+    },
+    "measure_temperature.calculated_supply": {
+      "title": {
+        "en": "Calculated supply",
+        "nl": "Berekende aanvoer"
+      }
+    },
+    "measure_percentage.heating_pump": {
+      "title": {
+        "en": "Heating pump",
+        "nl": "CV Pomp"
+      }
+    },
+    "measure_percentage.source_pump": {
+      "title": {
+        "en": "Source pump",
+        "nl": "Bron pomp"
+      }
+    },
+    "measure_string.priority": {
+      "title": {
+        "en": "Priority",
+        "nl": "Prioriteit"
+      }
+    },
+    "measure_frequency.compressor": {
+      "title": {
+        "en": "Compressor frequency",
+        "nl": "Compressor frequentie"
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/s-series/assets/images/small.png",
+    "large": "/drivers/s-series/assets/images/large.png",
+    "xlarge": "/drivers/s-series/assets/images/xlarge.png"
+  },
+  "discovery": "nibe-mdns",
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}

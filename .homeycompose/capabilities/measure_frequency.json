@@ -1,0 +1,11 @@
+{
+    "type": "number",
+    "title": { "en": "Measure Frequency" },
+    "uiComponent": "sensor",
+    "getable": true,
+    "setable": false,
+    "units": { "en": "Hz"},
+    "insights": true,
+    "chartType": "spline",
+    "icon": "/assets/pump.svg"
+  }

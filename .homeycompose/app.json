@@ -1,0 +1,25 @@
+{
+  "id": "eu.nibe-modbus",
+  "version": "1.0.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "name": {
+    "en": "Nibe S-Series"
+  },
+  "description": {
+    "en": "Support for Nibe S-Series. Currently only S1155, but others may work. Values are read from Modbus"
+  },
+  "category": [
+    "tools"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Erik Faassen",
+    "email": "faassene@gmail.com"
+  }
+}
