@@ -91,9 +91,11 @@ class s11556pcDevice extends Device {
             client.readInputRegisters(1102, 1),   // Heating pump % 
             client.readInputRegisters(1104, 1),   // Source pump %
             client.readInputRegisters(1028, 1),   // Priority
-            client.readInputRegisters(2800, 1),    // RMU S40 temperature
+            client.readInputRegisters(2800, 1),   // RMU S40 temperature
             client.readInputRegisters(1046, 1),   // Compressor frequency
-            client.readInputRegisters(2166, 1)    // Energy usage
+            client.readInputRegisters(2166, 1),   // Energy usage
+            client.readInputRegisters(3130, 1),   // RMU S40 Humidity
+            client.readInputRegisters(1027, 1)    // Additional Heat Power in kW
 
         ]).then((results) => {
     
@@ -114,6 +116,8 @@ class s11556pcDevice extends Device {
             var rmu_s40_temperature = results[13].response._body._valuesAsBuffer;
             var compressor_frequency = results[14].response._body._valuesAsBuffer;
             var energy_usage = results[15].response._body._valuesAsBuffer;
+            var rmu_s40_humidity = results[16].response._body._valuesAsBuffer;
+            var addt_heat_power = results[17].response._body._valuesAsBuffer;
     
             // Convert HEX to Decimal and divide by the scalefactor
             temperature_outside = temperature_outside.readInt16BE().toString() /10;                         // scale factor is 10
@@ -132,6 +136,8 @@ class s11556pcDevice extends Device {
             rmu_s40_temperature = rmu_s40_temperature.readInt16BE().toString() / 10;                        // scale factor is 10
             compressor_frequency = compressor_frequency.readInt16BE().toString() / 10;                      // scale factor is 10
             energy_usage = energy_usage.readInt16BE().toString() / 1;                                       // scale factor is 1
+            rmu_s40_humidity = rmu_s40_humidity.readInt16BE().toString() / 10;                              // scale factor is 10
+            addt_heat_power = addt_heat_power.readInt16BE().toString() / 100;                               // scale factor is 100
 
             // Translate priority mode to text
             if (priority == 10) {
@@ -154,8 +160,8 @@ class s11556pcDevice extends Device {
             }
 
             // log compressor frequency
-            this.log('source temp in = ', temperature_source_in)
-            this.log('compressor frequency = ', compressor_frequency)
+            // this.log('source temp in = ', temperature_source_in)
+            // this.log('compressor frequency = ', compressor_frequency)
 
             // Set capabilities values
             this.setCapabilityValue('measure_temperature.outside', temperature_outside);
@@ -173,6 +179,7 @@ class s11556pcDevice extends Device {
             this.setCapabilityValue('measure_string.priority', priority);
             this.setCapabilityValue('measure_frequency.compressor', compressor_frequency);
             this.setCapabilityValue('measure_power', energy_usage);
+            this.setCapabilityValue('measure_string.addt_heat', addt_heat_power);
 
             // this.log('All values set')
 
@@ -183,6 +190,7 @@ class s11556pcDevice extends Device {
               const rmu_s40 = this.homey.drivers.getDriver('rmu-s40').getDevice({id: 'rmu-s40-0001'});
               this.log('RMU S40 is added...');
               rmu_s40.setCapabilityValue('measure_temperature', rmu_s40_temperature);
+              rmu_s40.setCapabilityValue('measure_humidity', rmu_s40_humidity);
             }
             else {
               this.log('RMU S40 is NOT added...'); // no RMU S40 not setting values to device

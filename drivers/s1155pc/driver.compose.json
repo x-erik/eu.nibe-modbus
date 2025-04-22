@@ -18,7 +18,8 @@
     "measure_percentage.source_pump",
     "measure_frequency.compressor",
     "measure_string.priority",
-    "measure_power"
+    "measure_power",
+    "measure_string.addt_heat"
   ],
   "capabilitiesOptions": {
     "current_limit": {
@@ -106,6 +107,12 @@
       "title": {
         "en": "Compressor frequency",
         "nl": "Compressor frequentie"
+      }
+    },
+    "measure_string.addt_heat": {
+      "title": {
+        "en": "Additional heat power",
+        "nl": "Vermogen interne bijverwarming"
       }
     }
   },
