@@ -91,7 +91,7 @@ class s11556pcDevice extends Device {
             client.readInputRegisters(1102, 1),   // Heating pump % 
             client.readInputRegisters(1104, 1),   // Source pump %
             client.readInputRegisters(1028, 1),   // Priority
-            client.readInputRegisters(116, 1),    // RMU S40 temperature
+            client.readInputRegisters(2800, 1),    // RMU S40 temperature
             client.readInputRegisters(1046, 1),   // Compressor frequency
             client.readInputRegisters(2166, 1)    // Energy usage
 
