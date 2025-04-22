@@ -6,7 +6,7 @@
     "build": "tsc"
   },
   "dependencies": {
-    "jsmodbus": "^4.0.6",
+    "jsmodbus": "^4.0.10",
     "npm": "^10.9.1",
     "sharp": "^0.33.5"
   }
