@@ -73,7 +73,7 @@
         "measure_percentage.source_pump",
         "measure_frequency.compressor",
         "measure_string.priority",
-        "measure_string.addt_heat",
+        "measure_addt_heat",
         "measure_power"
       ],
       "capabilitiesOptions": {
@@ -164,9 +164,9 @@
             "nl": "Compressor frequentie"
           }
         },
-        "measure_string.addt_heat": {
+        "measure_addt_heat": {
           "title": {
-            "en": "Additional heat power",
+            "en": "Power additional heat",
             "nl": "Vermogen interne bijverwarming"
           }
         }
@@ -194,6 +194,21 @@
     }
   ],
   "capabilities": {
+    "measure_addt_heat": {
+      "type": "number",
+      "title": {
+        "en": "Additional Heat"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "units": {
+        "en": "kW"
+      },
+      "insights": true,
+      "chartType": "spline",
+      "icon": "/assets/power.svg"
+    },
     "measure_frequency": {
       "type": "number",
       "title": {

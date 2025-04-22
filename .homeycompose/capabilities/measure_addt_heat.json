@@ -1,0 +1,11 @@
+{
+    "type": "number",
+    "title": { "en": "Additional Heat" },
+    "uiComponent": "sensor",
+    "getable": true,
+    "setable": false,
+    "units": { "en": "kW"},
+    "insights": true,
+    "chartType": "spline",
+    "icon": "/assets/power.svg"
+  }

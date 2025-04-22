@@ -50,6 +50,17 @@ class s11556pcDevice extends Device {
    */
   async onInit() {
     this.log('s11556pcDevice has been initialized');
+    
+    //await this.removeCapability('measure_number.addt_heat');
+    //await this.removeCapability('measure_string.addt_heat');
+    //await this.addCapability('measure_addt_heat');
+
+
+
+    // Check if all capabilities exists
+    //if (this.hasCapability('measure_string.addt_heat') === false) {
+    //   await this.addCapability('measure_string.addt_heat');
+    //}
 
     const option = {
       'host': this.getSettings().address,
@@ -159,6 +170,7 @@ class s11556pcDevice extends Device {
               priority = "N/A"
             }
 
+
             // log compressor frequency
             // this.log('source temp in = ', temperature_source_in)
             // this.log('compressor frequency = ', compressor_frequency)
@@ -179,7 +191,7 @@ class s11556pcDevice extends Device {
             this.setCapabilityValue('measure_string.priority', priority);
             this.setCapabilityValue('measure_frequency.compressor', compressor_frequency);
             this.setCapabilityValue('measure_power', energy_usage);
-            this.setCapabilityValue('measure_string.addt_heat', addt_heat_power);
+            this.setCapabilityValue('measure_addt_heat', addt_heat_power);
 
             // this.log('All values set')
 
@@ -195,6 +207,7 @@ class s11556pcDevice extends Device {
             else {
               this.log('RMU S40 is NOT added...'); // no RMU S40 not setting values to device
             }
+
 
         }).catch((error) => {
             // this.log('=== in catch section 1 ===')
