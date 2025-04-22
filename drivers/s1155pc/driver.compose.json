@@ -18,8 +18,8 @@
     "measure_percentage.source_pump",
     "measure_frequency.compressor",
     "measure_string.priority",
-    "measure_power",
-    "measure_string.addt_heat"
+    "measure_string.addt_heat",
+    "measure_power"
   ],
   "capabilitiesOptions": {
     "current_limit": {
